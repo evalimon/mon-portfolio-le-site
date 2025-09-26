@@ -1,0 +1,415 @@
+/* Variables for Colors and Font */
+:root {
+  --primary-color: #558eccb3;
+  --secondary-color: #67adb8;
+  --light-color: #F8F9FA;
+  --dark-color: #343A40;
+  --white: #FFFFFF;
+  --background-color: #F5F5F5;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--dark-color);
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0 20px; /* Ajoute un espace de 20px sur les côtés */
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main {
+  margin: 0 auto; /* Centre le contenu horizontalement */
+  padding: 50px; /* Ajoute une marge interne autour du contenu */
+}
+
+/* Header */
+.header {
+  background-color: var(--white);
+  box-shadow: var(--box-shadow);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.bandeau {
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 1rem 0; 
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px; /* Espace en dessous du bandeau */
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--dark-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--dark-color);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  background-color: var(--white);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  color: var(--secondary-color);
+}
+
+/* Projects Section */
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Maximum 4 colonnes */
+  gap: 1.5rem; /* Espacement entre les projets */
+}
+
+.projects {
+  padding: 3rem 1rem;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* Coins non arrondis */
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem; /* Taille réduite pour le texte */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  opacity: 1;
+}
+
+/* Titre de chaque année */
+.year-title {
+  grid-column: 1 / -1; /* Le titre occupe toute la largeur de la grille */
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0; /* Espacement autour du titre */
+  text-align: left; /* Aligner le titre à gauche */
+}
+
+.year-container {
+  display: contents;
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.contact a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-color);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Lightbox Styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.lightbox:not(.hidden) {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-content {
+  max-width: 80%;
+  max-height: 80%;
+  box-shadow: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.nav-arrow {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.nav-arrow:hover {
+  opacity: 0.7;
+}
+
+/* Images sur la page des projets individuels */
+.image-grid img {
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  height: auto; /* Garde les proportions */
+  object-fit: contain; /* Affiche l'image entière sans découpe */
+  cursor: pointer; /* Affiche un curseur de clic pour les images cliquables */
+  transition: transform 0.3s ease;
+}
+
+.image-grid img:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(100%); /* Commence hors de l'écran à droite */
+  }
+  100% {
+    transform: translateX(-100%); /* Termine hors de l'écran à gauche */
+  }
+}
+
+.scrolling-title {
+  font-size: 2.5rem; /* Taille du texte */
+  font-weight: bold; /* Gras */
+  white-space: nowrap; /* Empêche le texte de passer à la ligne */
+  overflow: hidden; /* Cache les parties hors de la zone visible */
+  position: relative; /* Nécessaire pour l'animation */
+  color: rgba(225, 61, 39, 1);/* Couleur du titre */
+  background-color: #f5f5f5; /* Couleur d'arrière-plan */
+  padding: 10px 0; /* Espacement vertical */
+}
+
+.scrolling-title span {
+  display: inline-block; /* Pour l'alignement horizontal */
+  animation: scrollText 20s linear infinite; /* Animation fluide et continue */
+}
+
+/* Style pour le logo et texte à gauche */
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #f5f5f5; /* Couleur de fond */
+}
+
+.logo {
+  width: 50px; /* Taille du logo */
+  height: auto;
+  margin-right: 10px; /* Espace entre le logo et le texte */
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #000000; /* Couleur du texte */
+}
+
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0px 0px 20px #fff;
+}
+
+.hidden {
+  display: none;
+}
+
+.image-grid video {
+  width: 100%; /* S'adapte à la largeur du conteneur */
+  height: auto; /* Garde les proportions */
+  object-fit: contain; /* Affiche tout le contenu sans découpe */
+  cursor: pointer; /* Ajoute un curseur de clic */
+  transition: transform 0.3s ease;
+}
+
+.image-grid video:hover {
+  transform: scale(1.05); /* Zoom léger au survol */
+}
+
+.bio {
+  margin: 2rem 0; /* Espacement vertical */
+  background-color: var(--light-color); /* Couleur de fond */
+  padding: 20px; /* Ajoute de l'espace à l'intérieur de la box */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: var(--box-shadow); /* Ombre subtile */
+}
+
+.bio-container {
+  display: flex; /* Aligne l'image et le texte côte à côte */
+  align-items: center;
+  gap: 20px; /* Espace entre l'image et le texte */
+}
+
+.bio-photo {
+  width: 100px; /* Taille de l'image */
+  height: 100px;
+  border-radius: 50%; /* Forme circulaire */
+  object-fit: cover; /* Adapte l'image au conteneur sans la déformer */
+}
+
+.bio-text {
+  flex: 1; /* Le texte prend tout l'espace restant */
+}
+
+.bio-text h2 {
+  margin-bottom: 10px; /* Espacement sous le titre */
+  color: var(--dark-color); /* Couleur du texte */
+}
+
+.bio-text p {
+  color: var(--secondary-color); /* Couleur secondaire pour le paragraphe */
+  line-height: 1.6; /* Améliore la lisibilité */
+}
+
+/* Style pour les années page des projets */
+.year-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color); /* Couleur différente pour les années */
+  color: var(--white); /* Texte en blanc */
+  font-weight: bold;
+  text-align: center;
+  height: 100%; /* Assure que la carte a la même hauteur que les projets */
+  padding: 1rem; /* Ajoute de l'espace autour du texte */
+  border-radius: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+.year-card .project-title {
+  font-size: 1.2rem; /* Taille du texte pour les années */
+  padding: 0.5rem;
+  margin: 0; /* Supprime les marges par défaut */
+  opacity: 1; /* Toujours visible */
+  position: static; /* Position normale */
+  width: auto;
+  background: none;
+  transition: none; /* Supprime les transitions inutiles */
+}
+.image-grid {
+  display: flex;
+  flex-direction: column; /* Aligne les éléments verticalement */
+  align-items: flex-end; /* Aligne les éléments à droite */
+  gap: 10px; /* Ajoute un espacement entre les éléments */
+}

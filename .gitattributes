@@ -1,2 +1,20 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+# Supprimer les fichiers de l'historique Git
+git filter-branch --force --index-filter \
+  'git rm --cached --ignore-unmatch "la curiositée.mp4" "pot de fleur.avi"' \
+  --prune-empty --tag-name-filter cat -- --all
+
+# Alternative plus moderne avec git filter-repo (si installé)
+# git filter-repo --path "la curiositée.mp4" --invert-paths
+# git filter-repo --path "pot de fleur.avi" --invert-paths
+
+# Nettoyer les références
+git for-each-ref --format='delete %(refname)' refs/original | git update-ref --stdin
+
+# Forcer la collecte des déchets
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+
+# Si vous avez un dépôt distant, forcer la mise à jour
+git push origin --force --all

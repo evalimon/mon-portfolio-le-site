@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carteflux</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="assets/img/loup.png" alt="Logo" class="logo">
+      <span class="logo-text">evalimon</span>
+    </div>
+    <h1>Carte des flux migratoires en détails</h1>
+    <nav class="nav">
+      <a href="projects.html" class="nav-link">Retour à la Galerie</a>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="project-details">
+      <h2 class="section-title">Détails de l'œuvre</h2>
+      <p><strong>Titre :</strong> Carte des flux migratoires</p>
+      <p><strong>Date de création :</strong> Juin 2023</p>
+      <p><strong>Matériaux :</strong> Toile, bois, corde, encres</p>
+      <p><strong>Localisation :</strong> St Brevin, France</p>
+    </section>
+    <section class="project-gallery">
+      <h2 class="section-title">Images associées</h2>
+      <div class="image-grid">
+        <img src="assets/img/carteflux/carteflux1.jpg" alt="Image Projet 7" class="lightbox-image">
+        <img src="assets/img/carteflux/carteflux2.jpg" alt="Image Projet 7" class="lightbox-image">
+        <!-- Ajoutez plus d'images ici -->
+      </div>
+      <div id="lightbox-modal" class="lightbox hidden">
+        <span class="close-btn">&times;</span>
+        <img id="lightbox-content" class="lightbox-content" src="" alt="Image agrandie">
+        <div class="lightbox-navigation">
+          <button id="prev-btn" class="nav-arrow">❮</button>
+          <button id="next-btn" class="nav-arrow">❯</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2025 - Mon Portfolio</p>
+  </footer>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+</body>
+</html>

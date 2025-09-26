@@ -1,0 +1,104 @@
+/* Conteneur principal */
+.interactive-section {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin: 2rem 0;
+  }
+
+  /* Style des cases interactives */
+  .interactive-box {
+    position: relative;
+    flex: 1; /* Les cases prennent une largeur égale */
+    background-color: #2f2929; /* Couleur discrète */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .interactive-box:hover {
+    background-color: lab(89.18% 0 -0.01); /* Changement de couleur au survol */
+    transform: translateY(-5px); /* Élève légèrement la case */
+  }
+
+  .interactive-box .content-wrapper {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    padding: 1rem; /* Ajoute de l'espace autour du contenu */
+    box-sizing: border-box;
+  }
+
+  .interactive-box .main-text,
+  .interactive-box .hover-text {
+    font-size: 1.2rem; /* Taille réduite du texte */
+    font-weight: bold;
+    color: #555;
+    transition: opacity 0.3s ease;
+  }
+
+  .interactive-box .main-text {
+    opacity: 1; /* Texte visible par défaut */
+  }
+
+  .interactive-box .hover-text {
+    opacity: 0; /* Texte caché par défaut */
+    padding: 1rem; /* Ajoute de l'espace autour du texte */
+    font-size: 1rem; /* Texte plus petit pour la description */
+    color: #333; /* Couleur légèrement plus sombre pour le texte descriptif */
+  }
+
+  .interactive-box:hover .main-text {
+    opacity: 0; /* Le texte principal disparaît au survol */
+  }
+
+  .interactive-box:hover .hover-text {
+    opacity: 1; /* Le texte de description apparaît au survol */
+  }
+
+  /* Ajustement automatique de la hauteur */
+  .interactive-box {
+    height: auto; /* La hauteur s'ajuste automatiquement */
+  }
+
+  .interactive-box .content-wrapper {
+    height: auto; /* Ajuste la hauteur en fonction du contenu */
+  }
+
+  .interactive-box .hover-text {
+    white-space: normal; /* Permet le retour à la ligne */
+    text-align: left; /* Alignement à gauche pour un texte descriptif */
+  }
+
+  .interactive-box ul {
+    padding-left: 1.5rem; /* Espacement pour l'indentation des listes */
+    margin: 0;
+  }
+
+  .interactive-box ul li {
+    font-size: 0.9rem; /* Taille plus petite pour les éléments de liste */
+    margin-bottom: 0.5rem; /* Espacement entre les éléments de liste */
+  }
+
+  /* Apply box-sizing globally to avoid layout issues */
+  *,
+  *::before,
+  *::after {
+      box-sizing: border-box;
+  }
+  
+  html, body {
+      margin: 0;
+      padding: 0;
+      overflow: visible; /* Permet à la fumée de dépasser les limites */
+      height: 100%; /* Assure que le conteneur occupe toute la hauteur */
+      position: relative; /* Positionne correctement les éléments */
+    }
+
+  footer {
+    position: relative;
+    z-index: 1; /* Assure que le footer est derrière la fumée */
+    padding: 1rem;
+  }

@@ -1,0 +1,24 @@
+MonPortfolio/
+├── index.html        (Page d'acceuil)
+├── projects.html     (Page des projets)
+├── contact.html      (Page de contact)
+├── assets/
+│   ├── css/
+│   │   └── styles.css (Fichier de styles)
+│   ├── js/
+│   │   └── animations.js
+        └── lightbox.js (Fichier pour les animations)
+│   └── img/
+        └── filet/ -
+        └── fontaine/ -
+        └── la curiositée/ -
+        └── loup/ -
+        └── décombres/ -
+        └── receuil/ -
+        └── carte flux migratoires/ -
+        └── flowers/ -
+        └── vitrail/ -
+        └── spirale/ -
+        └── 
+        └── 
+                (Dossier pour les images)
